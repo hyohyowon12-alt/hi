@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Hub</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .thumbnail-area {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .thumbnail-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .thumbnail-area img {
+            transform: scale(1.1);
+        }
+
+        .content-area {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-area h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .content-area p {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .button-area {
+            margin-top: auto;
+        }
+
+        .btn-connect {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-connect:hover {
+            background-color: var(--primary-hover);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .card-grid {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card-grid">
+        <!-- 카드 1 -->
+        <article class="card">
+            <div class="thumbnail-area">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="게임 이미지">
+            </div>
+            <div class="content-area">
+                <h2>신스웨이브 슈터</h2>
+                <p>화려한 네온 컬러와 레트로 감성이 가득한 슈팅 게임입니다. 높은 점수를 기록하고 순위를 경쟁해보세요.</p>
+                <div class="button-area">
+                    <a href="./game.html" class="btn-connect">접속하기</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 카드 2 -->
+        <article class="card">
+            <div class="thumbnail-area">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="프로젝트 2 썸네일">
+            </div>
+            <div class="content-area">
+                <h2>데이터 분석 대시보드</h2>
+                <p>실시간 데이터를 시각화하여 한눈에 파악할 수 있는 웹 서비스입니다. 다양한 차트와 지표를 제공합니다.</p>
+                <div class="button-area">
+                    <a href="#" class="btn-connect">접속하기</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- 카드 3 -->
+        <article class="card">
+            <div class="thumbnail-area">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=600" alt="프로젝트 3 썸네일">
+            </div>
+            <div class="content-area">
+                <h2>협업 툴 서비스</h2>
+                <p>팀 프로젝트의 효율을 높여주는 업무 관리 솔루션입니다. 할 일 목록 공유와 실시간 채팅이 가능합니다.</p>
+                <div class="button-area">
+                    <a href="#" class="btn-connect">접속하기</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+
+</body>
+</html>
